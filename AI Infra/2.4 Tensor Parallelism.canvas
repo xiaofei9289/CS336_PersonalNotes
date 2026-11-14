@@ -813,5 +813,9 @@
 		{"id":"bc67284c6d4b6ce5","fromNode":"c2f281347f11826f","fromSide":"bottom","toNode":"d1f8aba683506786","toSide":"top"},
 		{"id":"fd20db0568e21cea","fromNode":"b950cbee7ded23af","fromSide":"bottom","toNode":"e69ca447abe7cadb","toSide":"top"},
 		{"id":"e8c3077481507264","fromNode":"e69ca447abe7cadb","fromSide":"bottom","toNode":"82f73fca1a9f3df8","toSide":"top"}
-	]
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
 }
