@@ -254,5 +254,9 @@
 		{"id":"e8ca7cf87b116a2f","fromNode":"4d277f5317ec9ba4","fromSide":"bottom","toNode":"6afceb3d410f49b8","toSide":"top"},
 		{"id":"c2ddfd46647eccac","fromNode":"6afceb3d410f49b8","fromSide":"bottom","toNode":"8dd339308cc0bc34","toSide":"top"},
 		{"id":"54be77d3e69bf9c5","fromNode":"8dd339308cc0bc34","fromSide":"bottom","toNode":"8d0cf47d938e3652","toSide":"top"}
-	]
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
 }

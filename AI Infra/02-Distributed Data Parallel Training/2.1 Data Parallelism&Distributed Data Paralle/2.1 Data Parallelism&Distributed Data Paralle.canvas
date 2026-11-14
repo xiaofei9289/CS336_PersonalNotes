@@ -138,5 +138,9 @@
 		{"id":"1f94f8d05ee6399f","fromNode":"50a8296797bd84ba","fromSide":"bottom","toNode":"6cd58813d4263500","toSide":"top"},
 		{"id":"3a6c87f44c55c7dc","fromNode":"6cd58813d4263500","fromSide":"bottom","toNode":"70d8e9d4203c51e6","toSide":"top"},
 		{"id":"63a6fce092061f4d","fromNode":"70d8e9d4203c51e6","fromSide":"bottom","toNode":"b0462fdfbd0c7be1","toSide":"top"}
-	]
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
 }
