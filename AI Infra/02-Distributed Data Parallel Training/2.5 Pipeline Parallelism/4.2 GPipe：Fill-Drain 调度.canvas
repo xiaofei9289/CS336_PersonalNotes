@@ -1,397 +1,95 @@
 {
 	"nodes":[
-		{"id":"811f7a7b9ab47e7d","type":"group","x":-3220,"y":-1610,"width":4325,"height":3890,"label":"4.2 GPipe：Fill-Drain 调度"},
-		{"id":"5085552245e468fe","type":"group","x":-1680,"y":-400,"width":1120,"height":980,"label":"T2时间步"},
-		{"id":"81f8bac2fde56f42","type":"group","x":-2280,"y":840,"width":1120,"height":980,"label":"T3时间步"},
-		{"id":"63f1d293c4157e2d","type":"group","x":-1080,"y":-1160,"width":970,"height":590,"label":"T1时间步"},
-		{"id":"a52aeb5de1666192","type":"group","x":-1080,"y":-320,"width":445,"height":860,"label":"GPU1 / Stage1：MB0"},
-		{"id":"e02ca58c56b68ed9","type":"group","x":-1680,"y":920,"width":445,"height":860,"label":"GPU1 / Stage1：MB1"},
-		{"id":"04fa8d5cadb3ab07","type":"group","x":-1680,"y":-320,"width":445,"height":590,"label":"GPU0 / Stage0：MB1"},
-		{"id":"8f7351b64465e217","type":"group","x":-2280,"y":920,"width":445,"height":590,"label":"GPU0 / Stage0：MB2"},
+		{"id":"8466c463b2bc0a7a","type":"group","x":-5360,"y":9280,"width":10000,"height":11780,"label":"Backward"},
+		{"id":"811f7a7b9ab47e7d","type":"group","x":-5360,"y":-2640,"width":10000,"height":9280,"label":"Forward"},
+		{"id":"55b4ea3a678124c2","type":"group","x":-4390,"y":16180,"width":8790,"height":2080,"label":"T9时间步"},
+		{"id":"00f24e759dc9e6cd","type":"group","x":-4390,"y":18580,"width":8790,"height":1745,"label":"T10时间步"},
+		{"id":"1a0f4621e1a6c9a0","type":"group","x":-4390,"y":14340,"width":7990,"height":1600,"label":"T8时间步"},
+		{"id":"27ede0d825bf8e1c","type":"group","x":-4390,"y":12100,"width":5670,"height":1840,"label":"T7时间步"},
+		{"id":"967342effe56f778","type":"group","x":-4080,"y":2440,"width":5281,"height":1560,"label":"T4时间步"},
+		{"id":"c9e33ff971f303a3","type":"group","x":-4640,"y":4480,"width":5920,"height":1360,"label":"T5时间步"},
+		{"id":"b2774fc80387a737","type":"group","x":-3605,"y":10340,"width":4885,"height":1625,"label":"T6时间步"},
+		{"id":"5085552245e468fe","type":"group","x":-2434,"y":-720,"width":6834,"height":1100,"label":"T2时间步"},
+		{"id":"81f8bac2fde56f42","type":"group","x":-3455,"y":720,"width":6095,"height":1200,"label":"T3时间步"},
+		{"id":"63f1d293c4157e2d","type":"group","x":-1440,"y":-1920,"width":5840,"height":840,"label":"T1时间步"},
+		{"id":"d427d827e8d13fcb","type":"group","x":-3960,"y":16580,"width":2320,"height":1280,"label":"GPU0 / Stage0：MB1 Backward"},
+		{"id":"b28a488f904e3818","type":"group","x":-3275,"y":12260,"width":1753,"height":1460,"label":"GPU0 / Stage0：MB3 Backward"},
+		{"id":"81f341964201c0cb","type":"group","x":-880,"y":12320,"width":1507,"height":1400,"label":"GPU1 / Stage1：MB2 Backward"},
+		{"id":"3458e197b7d50131","type":"group","x":-1880,"y":10580,"width":1575,"height":1280,"label":"GPU1 / Stage1：MB3 Backward"},
+		{"id":"a9861605e4094cde","type":"group","x":2640,"y":16660,"width":1507,"height":1280,"label":"GPU1 / Stage1：MB1 Backward"},
+		{"id":"d788d793d6f5b086","type":"group","x":-3355,"y":14585,"width":1800,"height":995,"label":"GPU0 / Stage0：MB2 Backward"},
+		{"id":"fc39fbfe4df38995","type":"group","x":-4240,"y":18812,"width":1345,"height":1248,"label":"GPU0 / Stage0：MB0 Backward"},
+		{"id":"7184c12a9c133611","type":"group","x":1075,"y":14585,"width":1305,"height":1210,"label":"GPU1 / Stage1：MB1 Backward"},
+		{"id":"b4e9d45976b19fb5","type":"group","x":-3000,"y":2560,"width":1180,"height":1160,"label":"GPU0 / Stage0：MB3"},
+		{"id":"8b9f2074e3171e6b","type":"group","x":-1880,"y":4600,"width":1120,"height":1120,"label":"GPU1 / Stage1：MB3"},
+		{"id":"c77c3c189c2549cd","type":"group","x":-760,"y":2640,"width":1010,"height":1160,"label":"GPU1 / Stage1：MB2"},
+		{"id":"a52aeb5de1666192","type":"group","x":2720,"y":-540,"width":1100,"height":920,"label":"GPU1 / Stage1：MB0"},
+		{"id":"8f7351b64465e217","type":"group","x":-2571,"y":840,"width":1120,"height":900,"label":"GPU0 / Stage0：MB2"},
+		{"id":"e02ca58c56b68ed9","type":"group","x":1280,"y":870,"width":1100,"height":900,"label":"GPU1 / Stage1：MB1"},
+		{"id":"04fa8d5cadb3ab07","type":"group","x":-1440,"y":-600,"width":991,"height":920,"label":"GPU0 / Stage0：MB1"},
+		{"id":"e557eeb4de95123c","type":"group","x":-1120,"y":-1800,"width":1120,"height":650,"label":"GPU0 / Stage0：MB0"},
 		{
-			"id":"ffb726d386f6642e",
+			"id":"bc2ab6a21c494654",
 			"type":"text",
-			"text":"四个 MB 的 Forward 全部完成",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":-20,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"df84b5c7886cfba9",
-			"type":"text",
-			"text":"第二部分：执行全部 Backward",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":120,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"9c7008f2b9a0430f",
-			"type":"text",
-			"text":"将各 MB 的 dH2 发送回 Rank 0",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":560,
-			"width":250,
-			"height":80
-		},
-		{
-			"id":"98aa4941afeec64a",
-			"type":"text",
-			"text":"分别计算 dH2_MB0 至dH2_MB3",
-			"styleAttributes":{"textAlign":"center"},
-			"x":590,
-			"y":420,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"f66b986759f89962",
-			"type":"text",
-			"text":"GPU1 从各 MB 的 Loss开始反向传播",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":260,
-			"width":250,
-			"height":80
-		},
-		{
-			"id":"aabf9e5781e7a711",
-			"type":"text",
-			"text":"按 MB 顺序将 H2 发送至 Rank1",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":-580,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"487a4a3509dcc75c",
-			"type":"text",
-			"text":"GPU1 / Stage 1 依次接收对应H2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":-460,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"0ff3bb236117b37c",
-			"type":"text",
-			"text":"依次执行 Block 3、Block4、FinalNorm、LM Head",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":-320,
-			"width":250,
-			"height":100
-		},
-		{
-			"id":"92f6da9470c952d6",
-			"type":"text",
-			"text":"分别计算 Loss_MB0 至Loss_MB3",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":-160,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"f616f49d4c2f3790",
-			"type":"text",
-			"text":"得到 H2_MB2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":560,
-			"y":-740,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"eef80681a4e0909e",
-			"type":"text",
-			"text":"得到 H2_MB3",
-			"styleAttributes":{"textAlign":"center"},
-			"x":840,
-			"y":-740,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"b79a9ad1748b4a69",
-			"type":"text",
-			"text":"得到 H2_MB1",
-			"styleAttributes":{"textAlign":"center"},
-			"x":280,
-			"y":-740,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"8b24fd1db4377683",
-			"type":"text",
-			"text":"得到 Stage 1 的参数梯度贡献",
-			"styleAttributes":{"textAlign":"center"},
-			"x":280,
-			"y":420,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"444162ab5a2922fc",
-			"type":"text",
-			"text":"GPU0 接收对应 dH2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":700,
-			"width":250,
-			"height":80
-		},
-		{
-			"id":"64e51802a471cc42",
-			"type":"text",
-			"text":"对各 MB 的 Block 2、Block 1和 Embedding 反向传播",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":860,
-			"width":250,
-			"height":87
-		},
-		{
-			"id":"b965f2444021f2d2",
-			"type":"text",
-			"text":"GPU0 / Stage 0 依次启动四个MB 的 Forward",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":-1120,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"76daf005a4b49c46",
-			"type":"text",
-			"text":"得到 Stage 0 的参数梯度贡献",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":1020,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"ef791acb8093db07",
-			"type":"text",
-			"text":"MB2：Embedding → Block 1→ Block 2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":560,
-			"y":-900,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"8eb835c43f50f699",
-			"type":"text",
-			"text":"MB3：Embedding → Block 1→ Block 2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":840,
-			"y":-900,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"67c6ad03b1c93030",
-			"type":"text",
-			"text":"MB0：Embedding → Block 1→ Block 2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":0,
-			"y":-900,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"2ffd5911f54a5253",
-			"type":"text",
-			"text":"得到 H2_MB0",
-			"styleAttributes":{"textAlign":"center"},
-			"x":0,
-			"y":-740,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"3de295ec887e4503",
-			"type":"text",
-			"text":"MB1：Embedding → Block 1→ Block 2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":280,
-			"y":-900,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"047a434f997019a9",
-			"type":"text",
-			"text":"两个 Stage 累积全部四个 MB的参数梯度",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":1160,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"a31924ddb8de4b4e",
-			"type":"text",
-			"text":"GPipe Forward 与 Backward完成",
-			"styleAttributes":{"textAlign":"center"},
-			"x":435,
-			"y":1300,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"6f3ff97f726b34fc",
-			"type":"text",
-			"text":"**GPipe**：Fill-Drain 调度",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-780,
-			"y":-1580,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"e5df9c8b537dfa80",
-			"type":"text",
-			"text":"输入：MB0、MB1、MB2、MB3",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-780,
-			"y":-1460,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"b29640455d1e3861",
-			"type":"text",
-			"text":"第一部分：Fill执行全部 Forward",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-780,
-			"y":-1340,
-			"width":250,
-			"height":60
-		},
-		{
-			"id":"8df393d9950c6a4f",
-			"type":"text",
-			"text":"GPU1 / Stage1空闲",
+			"text":"GPU0 / Stage0: MB2 经过Embedding，得到H0_MB2\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-380,
-			"y":-1140,
-			"width":250,
-			"height":550
-		},
-		{
-			"id":"265296036736b72a",
-			"type":"text",
-			"text":"Time Step 01",
-			"styleAttributes":{
-				"border":null,
-				"textAlign":"center"
-			},
-			"x":-3040,
-			"y":-330,
-			"width":250,
-			"height":590
-		},
-		{
-			"id":"6ec6497fc6f49ecb",
-			"type":"text",
-			"text":"Time Step 01",
-			"styleAttributes":{
-				"border":null,
-				"textAlign":"center"
-			},
-			"x":-3040,
-			"y":-1160,
-			"width":250,
-			"height":590
-		},
-		{
-			"id":"f0d48658f507014f",
-			"type":"text",
-			"text":"GPU0 / Stage0: MB1 经过Embedding，得到H0_MB1\n",
-			"styleAttributes":{
-				"border":null,
-				"textAlign":"center"
-			},
-			"x":-1660,
-			"y":-185,
+			"x":-2471,
+			"y":1005,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"413381cace98a03b",
+			"id":"86916fa18c472c5b",
 			"type":"text",
-			"text":"GPU0 / Stage0: H0_MB1 经过Transformer Block1得到H1_MB1\n",
+			"text":"GPU0 / Stage0: H0_MB2 经过Transformer Block1得到H1_MB2\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":-70,
+			"x":-2471,
+			"y":1120,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"2c6feedab4331794",
+			"id":"d9323d8312e59ddf",
 			"type":"text",
-			"text":"GPU0 / Stage0: H1_MB1 经过Transformer Block2得到H2_MB1\n",
+			"text":"GPU0 保存反向传播所需激活，并发送 H2_MB2 至 GPU1 /Stage1\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":50,
+			"x":-2471,
+			"y":1360,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"91d3a2657eb593e1",
+			"id":"dc99d0e8524e44d9",
 			"type":"text",
-			"text":"GPU0 保存反向传播所需激活，并发送 H2_MB1 至 GPU1 /Stage1\n",
+			"text":"GPU0 / Stage0: H1_MB2 经过Transformer Block2得到H2_MB2\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":170,
+			"x":-1948,
+			"y":1360,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"b4d3fcac82d066b0",
+			"id":"81fa9e3a41fa7d0e",
 			"type":"text",
-			"text":"GPU0 / Stage0: 读取 MB1 的 Input IDs\n",
+			"text":"GPU0 / Stage0: 读取 MB2 的 Input IDs\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":-310,
-			"width":405,
-			"height":70
-		},
-		{
-			"id":"eb6a8bc592fa152c",
-			"type":"text",
-			"text":"GPU1 / Stage1：接收 H2_MB0",
-			"styleAttributes":{
-				"border":null,
-				"textAlign":"center"
-			},
-			"x":-1060,
-			"y":-310,
+			"x":-2471,
+			"y":880,
 			"width":405,
 			"height":70
 		},
@@ -404,7 +102,7 @@
 				"textAlign":"center"
 			},
 			"x":-1060,
-			"y":-1140,
+			"y":-1700,
 			"width":405,
 			"height":70
 		},
@@ -417,7 +115,7 @@
 				"textAlign":"center"
 			},
 			"x":-1060,
-			"y":-1015,
+			"y":-1575,
 			"width":405,
 			"height":70
 		},
@@ -430,20 +128,7 @@
 				"textAlign":"center"
 			},
 			"x":-1060,
-			"y":-900,
-			"width":405,
-			"height":70
-		},
-		{
-			"id":"f622fb5633c56e2a",
-			"type":"text",
-			"text":"GPU0 / Stage0: H1_MB0 经过Transformer Block2得到H2_MB0\n",
-			"styleAttributes":{
-				"border":null,
-				"textAlign":"center"
-			},
-			"x":-1060,
-			"y":-780,
+			"y":-1460,
 			"width":405,
 			"height":70
 		},
@@ -456,152 +141,456 @@
 				"textAlign":"center"
 			},
 			"x":-1060,
-			"y":-660,
+			"y":-1280,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"8a5cddf7f286dc5a",
+			"id":"6ec6497fc6f49ecb",
 			"type":"text",
-			"text":"GPU1 / Stage1: H2_MB0 经过Transformer Block3得到H3_MB0\n",
+			"text":"Time Step 01",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1060,
-			"y":-185,
+			"x":-1910,
+			"y":-1920,
+			"width":250,
+			"height":840
+		},
+		{
+			"id":"f622fb5633c56e2a",
+			"type":"text",
+			"text":"GPU0 / Stage0: H1_MB0 经过Transformer Block2得到H2_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-625,
+			"y":-1280,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"04a599707397f5b9",
+			"id":"6f3ff97f726b34fc",
 			"type":"text",
-			"text":"GPU1 / Stage1: H3_MB0 经过Transformer Block4得到H4_MB0\n",
+			"text":"**GPipe**：Fill-Drain 调度",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-982,
+			"y":-2240,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"e5df9c8b537dfa80",
+			"type":"text",
+			"text":"输入：MB0、MB1、MB2、MB3",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-982,
+			"y":-2120,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"b29640455d1e3861",
+			"type":"text",
+			"text":"第一部分：Fill执行全部 Forward",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-982,
+			"y":-2000,
+			"width":250,
+			"height":60
+		},
+		{
+			"id":"2c6feedab4331794",
+			"type":"text",
+			"text":"GPU0 / Stage0: H1_MB1 经过Transformer Block2得到H2_MB1\n",
 			"styleAttributes":{
 				"border":null,
-				"textAlign":"center"
+				"textAlign":"center",
+				"shape":null
 			},
-			"x":-1060,
-			"y":-70,
+			"x":-875,
+			"y":140,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"57e1d27489589157",
+			"id":"91d3a2657eb593e1",
 			"type":"text",
-			"text":"GPU1 / Stage1: H4_MB0 经过FinalNorm得到Norm_MB0\n",
+			"text":"GPU0 保存反向传播所需激活，并发送 H2_MB1 至 GPU1 /Stage1\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1060,
-			"y":50,
+			"x":-1375,
+			"y":140,
+			"width":405,
+			"height":70,
+			"color":"4"
+		},
+		{
+			"id":"413381cace98a03b",
+			"type":"text",
+			"text":"GPU0 / Stage0: H0_MB1 经过Transformer Block1得到H1_MB1\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1375,
+			"y":-50,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"b166cf63fcec4091",
+			"id":"f0d48658f507014f",
 			"type":"text",
-			"text":"GPU1 / Stage1: Norm_MB0 经过LM Head得到Logits_MB0\n",
+			"text":"GPU0 / Stage0: MB1 经过Embedding，得到H0_MB1\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1060,
-			"y":170,
+			"x":-1375,
+			"y":-290,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"965f6fa3df273edc",
+			"id":"b4d3fcac82d066b0",
 			"type":"text",
-			"text":"GPU1 / Stage1: Logits_MB0结合 Labels_MB0计算 Loss_MB0\n",
+			"text":"GPU0 / Stage0: 读取 MB1 的 Input IDs\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1060,
-			"y":300,
+			"x":-1375,
+			"y":-530,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"cc8b4655ec7ecdff",
+			"id":"265296036736b72a",
 			"type":"text",
-			"text":"GPU1 保存反向传播所需激活\n",
+			"text":"Time Step 02",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1060,
-			"y":440,
+			"x":-2880,
+			"y":-720,
+			"width":250,
+			"height":1095
+		},
+		{
+			"id":"acf51df3d81e5787",
+			"type":"text",
+			"text":"Time Step 03",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3905,
+			"y":720,
+			"width":250,
+			"height":1200
+		},
+		{
+			"id":"eff42f1f472eb38c",
+			"type":"text",
+			"text":"Time Step 04",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-4640,
+			"y":2711,
+			"width":250,
+			"height":928
+		},
+		{
+			"id":"0ed0515dc6c7e4b5",
+			"type":"text",
+			"text":"GPU0 / Stage0: 读取 MB3 的 Input IDs\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2740,
+			"y":2670,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"bc2ab6a21c494654",
+			"id":"4eb90f8dbb67d3cf",
 			"type":"text",
-			"text":"GPU0 / Stage0: MB2 经过Embedding，得到H0_MB2\n",
+			"text":"GPU0 / Stage0: MB3 经过Embedding，得到H0_MB3\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-2260,
-			"y":1055,
+			"x":-2740,
+			"y":2795,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"86916fa18c472c5b",
+			"id":"c0975e6048c6514a",
 			"type":"text",
-			"text":"GPU0 / Stage0: H0_MB2 经过Transformer Block1得到H1_MB2\n",
+			"text":"GPU0 / Stage0: H0_MB3 经过Transformer Block1得到H1_MB3\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-2260,
-			"y":1170,
+			"x":-2740,
+			"y":2910,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"dc99d0e8524e44d9",
+			"id":"fd23b12d766c619e",
 			"type":"text",
-			"text":"GPU0 / Stage0: H1_MB2 经过Transformer Block2得到H2_MB2\n",
+			"text":"GPU0 保存反向传播所需激活，并发送 H2_MB3 至 GPU1 /Stage1\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-2260,
-			"y":1290,
+			"x":-2740,
+			"y":3150,
+			"width":405,
+			"height":70,
+			"color":"5"
+		},
+		{
+			"id":"9a88d95822773559",
+			"type":"text",
+			"text":"GPU0 / Stage0: H1_MB3 经过Transformer Block2得到H2_MB3\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2300,
+			"y":3150,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"d9323d8312e59ddf",
+			"id":"7bc76f97cefedc95",
 			"type":"text",
-			"text":"GPU0 保存反向传播所需激活，并发送 H2_MB2 至 GPU1 /Stage1\n",
+			"text":"GPU1 / Stage1: H4_MB3 经过FinalNorm得到Norm_MB3\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-2260,
-			"y":1410,
+			"x":-1725,
+			"y":5170,
 			"width":405,
 			"height":70
 		},
 		{
-			"id":"b97e5cdaea025c38",
+			"id":"7ee21e1418064123",
 			"type":"text",
-			"text":"GPU1 / Stage1：接收 H2_MB1",
+			"text":"GPU1 / Stage1: Norm_MB3经过LM Head得到Logits_MB3\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":930,
+			"x":-1725,
+			"y":5290,
 			"width":405,
 			"height":70
+		},
+		{
+			"id":"e7a78e0280fbd29b",
+			"type":"text",
+			"text":"GPU1 / Stage1: Logits_MB3结合 Labels_MB3计算 Loss_MB3\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1725,
+			"y":5540,
+			"width":405,
+			"height":70,
+			"color":"1"
+		},
+		{
+			"id":"bbc4474cc8a33133",
+			"type":"text",
+			"text":"GPU1 保存反向传播所需MB3 Forward激活\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1285,
+			"y":5540,
+			"width":405,
+			"height":70,
+			"color":"1"
+		},
+		{
+			"id":"96c24d1b3820b1b8",
+			"type":"text",
+			"text":"GPU1 / Stage1：接收 H2_MB3",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1725,
+			"y":4810,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"97b2523db6fd544a",
+			"type":"text",
+			"text":"GPU1 / Stage1: H2_MB3 经过Transformer Block3得到H3_MB3\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1725,
+			"y":4935,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"d2d93b7f7b8b9fb9",
+			"type":"text",
+			"text":"GPU1 / Stage1: H3_MB3 经过Transformer Block4得到H4_MB3\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1725,
+			"y":5050,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"2fff5783ca327f0e",
+			"type":"text",
+			"text":"Time Step 05",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-5120,
+			"y":4720,
+			"width":250,
+			"height":980
+		},
+		{
+			"id":"bdf98c1c52fe9673",
+			"type":"text",
+			"text":"1. 全部4个 MB 的 Forward 完成\n2. Loss_MB0～Loss_MB3已计算\n3. 各 Stage 保留反向所需激活",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-4640,
+			"y":6080,
+			"width":720,
+			"height":100
+		},
+		{
+			"id":"19c522410df15ac1",
+			"type":"text",
+			"text":"进入第二部分：GPipeBackward",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-4640,
+			"y":6320,
+			"width":720,
+			"height":100
+		},
+		{
+			"id":"8693584ab5276b5a",
+			"type":"text",
+			"text":"GPU1 / Stage1: H2_MB2 经过Transformer Block3得到H3_MB2\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-632,
+			"y":2875,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"daf316c4daf8b993",
+			"type":"text",
+			"text":"GPU1 / Stage1: H2_MB2 经过Transformer Block4得到H4_MB2\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-632,
+			"y":2990,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"b75b2e9753192819",
+			"type":"text",
+			"text":"GPU1 / Stage1: H4_MB2 经过FinalNorm得到Norm_MB2\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-632,
+			"y":3110,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"85e01a51a596512d",
+			"type":"text",
+			"text":"GPU1 / Stage1：接收 H2_MB2",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-632,
+			"y":2750,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"a1b8ca9656bf8a30",
+			"type":"text",
+			"text":"GPU1 / Stage1: Norm_MB2经过LM Head得到Logits_MB2\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-632,
+			"y":3230,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"ddb7cc8e818b1b4b",
+			"type":"text",
+			"text":"GPU1 / Stage1: Logits_MB2结合 Labels_MB2计算 Loss_MB2\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-632,
+			"y":3460,
+			"width":405,
+			"height":70,
+			"color":"6"
+		},
+		{
+			"id":"81f17a967a71c63c",
+			"type":"text",
+			"text":"GPU1 保存反向传播所需MB2 Forward激活\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-172,
+			"y":3460,
+			"width":405,
+			"height":70,
+			"color":"6"
 		},
 		{
 			"id":"751c0b758665e2be",
@@ -611,8 +600,8 @@
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":1055,
+			"x":1400,
+			"y":1035,
 			"width":405,
 			"height":70
 		},
@@ -624,8 +613,8 @@
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":1170,
+			"x":1400,
+			"y":1150,
 			"width":405,
 			"height":70
 		},
@@ -637,21 +626,8 @@
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":1290,
-			"width":405,
-			"height":70
-		},
-		{
-			"id":"81fa9e3a41fa7d0e",
-			"type":"text",
-			"text":"GPU0 / Stage0: 读取 MB2 的 Input IDs\n",
-			"styleAttributes":{
-				"border":null,
-				"textAlign":"center"
-			},
-			"x":-2260,
-			"y":930,
+			"x":1400,
+			"y":1270,
 			"width":405,
 			"height":70
 		},
@@ -663,8 +639,8 @@
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":1410,
+			"x":1400,
+			"y":1390,
 			"width":405,
 			"height":70
 		},
@@ -676,55 +652,1074 @@
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":1540,
+			"x":1400,
+			"y":1620,
 			"width":405,
 			"height":70
 		},
 		{
 			"id":"fa8e893a07273b72",
 			"type":"text",
-			"text":"GPU1 保存反向传播所需激活\n",
+			"text":"GPU1 保存反向传播所需MB1 Forward激活\n",
 			"styleAttributes":{
 				"border":null,
 				"textAlign":"center"
 			},
-			"x":-1660,
-			"y":1680,
+			"x":1860,
+			"y":1620,
 			"width":405,
 			"height":70
-		}
+		},
+		{
+			"id":"b97e5cdaea025c38",
+			"type":"text",
+			"text":"GPU1 / Stage1：接收 H2_MB1",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1400,
+			"y":910,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"8df393d9950c6a4f",
+			"type":"text",
+			"text":"GPU1 / Stage1空闲",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":2748,
+			"y":-1700,
+			"width":250,
+			"height":550
+		},
+		{
+			"id":"8affb9c217969988",
+			"type":"text",
+			"text":"GPU0 / Stage0空闲",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2425,
+			"y":4605,
+			"width":250,
+			"height":1130
+		},
+		{
+			"id":"04a599707397f5b9",
+			"type":"text",
+			"text":"GPU1 / Stage1: H3_MB0 经过Transformer Block4得到H4_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":2840,
+			"y":-230,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"57e1d27489589157",
+			"type":"text",
+			"text":"GPU1 / Stage1: H4_MB0 经过FinalNorm得到Norm_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":2840,
+			"y":-110,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"b166cf63fcec4091",
+			"type":"text",
+			"text":"GPU1 / Stage1: Norm_MB0 经过LM Head得到Logits_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":2840,
+			"y":10,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"965f6fa3df273edc",
+			"type":"text",
+			"text":"GPU1 / Stage1: Logits_MB0结合 Labels_MB0计算 Loss_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":2840,
+			"y":200,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"eb6a8bc592fa152c",
+			"type":"text",
+			"text":"GPU1 / Stage1：接收 H2_MB0",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":2840,
+			"y":-470,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"8a5cddf7f286dc5a",
+			"type":"text",
+			"text":"GPU1 / Stage1: H2_MB0 经过Transformer Block3得到H3_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":2840,
+			"y":-345,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"cc8b4655ec7ecdff",
+			"type":"text",
+			"text":"GPU1 保存反向传播所需MB0 Forward激活\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3300,
+			"y":200,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"7da6b1bc04d30a64",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH4_MB0 经过 Transformer Block4 Backward得到 dH3_MB0，并计算 Block4 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3014,
+			"y":17380,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"8dc10a5b5bc3560d",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH3_MB0 经过 Transformer Block3 Backward得到 dH2_MB0，并计算 Block3 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3014,
+			"y":17510,
+			"width":405,
+			"height":100
+		},
+		{
+			"id":"0793a99d42d0f809",
+			"type":"text",
+			"text":"GPU1 将 dH2_MB0 发送至GPU0供 T10 的 MB0 Backward 使用",
+			"styleAttributes":{},
+			"x":3014,
+			"y":17700,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"25de7b19d0771e53",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T2 保存的 MB0 Forward 激活及 GPU1 本地模型参数",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3454,
+			"y":16865,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"ce775bf9e29033a3",
+			"type":"text",
+			"text":"GPU1 本地累积 MB0的参数梯度贡献 加到 T6、T7、T8 已累积的 MB3、MB2、MB1 梯度上",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3454,
+			"y":17700,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"3d589bc9de0a5922",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T2 计算并保留的Loss_MB0及其对应的计算图",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3014,
+			"y":16865,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"fe0004d669aca952",
+			"type":"text",
+			"text":"GPU1 / Stage1: Loss_MB0 对 Logits_MB0求导得到 dLogits_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3014,
+			"y":17025,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"11f00d9071d4af57",
+			"type":"text",
+			"text":"GPU1 / Stage1: dLogits_MB0 经过 LM Head Backward得到 dNorm_MB0，并计算 LM Head 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3014,
+			"y":17140,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"f437eb6b837c0ba3",
+			"type":"text",
+			"text":"GPU1 / Stage1：dNorm_MB0 经过 FinalNorm Backward得到 dH4_MB0，并计算 FinalNorm参数梯度贡献",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":3014,
+			"y":17260,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"5f380e3885be677c",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH2_MB1 经过 TransformerBlock2 Backward得到 dH1_MB1并计算 Block2 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3300,
+			"y":16980,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"858cf6392985c6e0",
+			"type":"text",
+			"text":"GPU0 / Stage0: H1_MB1 经过 TransformerBlock1 Backward得到 dH0_MB1并计算 Block1 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3300,
+			"y":17120,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"05039d619ee9c640",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH0_MB1 经过 EmbeddingBackward计算 Embedding 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3300,
+			"y":17280,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"f11ee49b6b6fbad0",
+			"type":"text",
+			"text":"1. GPU0 保存本地累积 MB1的参数梯度贡献 \n2. 加到 T7、T8 已累积的 MB3、MB2 梯度上\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3300,
+			"y":17460,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"64bd20ce278ce129",
+			"type":"text",
+			"text":"GPU1 / Stage1: dLogits_MB1 经过 LM Head Backward得到 dNorm_MB1，并计算 LM Head 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1160,
+			"y":15115,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"e89a8f322bfc8cf1",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH4_MB1 经过 Transformer Block4 Backward得到 dH3_MB1，并计算 Block4 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1160,
+			"y":15355,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"b08ee2f21131684d",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH3_MB1 经过 Transformer Block3 Backward得到 dH2_MB1，并计算 Block3 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1160,
+			"y":15485,
+			"width":405,
+			"height":100
+		},
+		{
+			"id":"31bb3c46808030df",
+			"type":"text",
+			"text":"GPU1 将 dH2_MB1 发送至GPU0供 T9 的 MB1 Backward 使用",
+			"styleAttributes":{},
+			"x":1160,
+			"y":15675,
+			"width":405,
+			"height":70,
+			"color":"1"
+		},
+		{
+			"id":"6ab7bdd774fd23cf",
+			"type":"text",
+			"text":"GPU1 / Stage1：dNorm_MB1 经过 FinalNorm Backward得到 dH4_MB1，并计算 FinalNorm参数梯度贡献",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1160,
+			"y":15235,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"57ce0535668a719f",
+			"type":"text",
+			"text":"GPU1 本地累积 MB1的参数梯度贡献 加到 T6、T7 已累积的 MB3、MB2 梯度上",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1795,
+			"y":15675,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"6c00aca885171b50",
+			"type":"text",
+			"text":"Time Step 06",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-5125,
+			"y":16718,
+			"width":250,
+			"height":1165
+		},
+		{
+			"id":"65c577c4f2f303d1",
+			"type":"text",
+			"text":"GPU0 / Stage0: 使用 T2 保存的 MB1 Forward激活以及 GPU0 本地模型参数\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3840,
+			"y":16820,
+			"width":405,
+			"height":70,
+			"color":"4"
+		},
+		{
+			"id":"3a604202e4c3302e",
+			"type":"text",
+			"text":"GPU0 / Stage0: 接收 T8 中 GPU1 发送的dH2_MB1\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3300,
+			"y":16820,
+			"width":405,
+			"height":70,
+			"color":"1"
+		},
+		{
+			"id":"8d152cf3e4cd2f0b",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T3 保存的 MB1 Forward 激活及 GPU1 本地模型参数",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1795,
+			"y":14840,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"a23b77547fcab28e",
+			"type":"text",
+			"text":"GPU1 / Stage1: Loss_MB1 对 Logits_MB2求导得到 dLogits_MB1\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1160,
+			"y":15000,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"9097e96ae2afd70a",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T3 计算并保留的Loss_MB1及其对应的计算图",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":1160,
+			"y":14840,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"daa1f0795e944fbd",
+			"type":"text",
+			"text":"GPU0 / Stage0: 使用 T3 保存的 MB2 Forward激活以及 GPU0 本地模型参数\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3172,
+			"y":14660,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"874039c5ab7f96a0",
+			"type":"text",
+			"text":"GPU0 / Stage0: 接收 T7 中 GPU1 发送的dH2_MB2\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2735,
+			"y":14660,
+			"width":405,
+			"height":70,
+			"color":"3"
+		},
+		{
+			"id":"eabbd10014293c23",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH2_MB2 经过 TransformerBlock2 Backward得到 dH1_MB2并计算 Block2 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2735,
+			"y":14820,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"7f99b4a90f9c7472",
+			"type":"text",
+			"text":"GPU0 / Stage0: H1_MB2 经过 TransformerBlock1 Backward得到 dH0_MB2并计算 Block1 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2735,
+			"y":14960,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"48b2ccddfde04d07",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH0_MB2 经过 EmbeddingBackward计算 Embedding 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2735,
+			"y":15120,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"175566408975a430",
+			"type":"text",
+			"text":"1. GPU0 保存本地累积 MB2的参数梯度贡献 \n2. 加到 T7 已累积的 MB3 梯度上\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2735,
+			"y":15300,
+			"width":405,
+			"height":70,
+			"color":"5"
+		},
+		{
+			"id":"8d009ca2bc29e6e0",
+			"type":"text",
+			"text":"Time Step 06",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-5125,
+			"y":14578,
+			"width":250,
+			"height":1165
+		},
+		{
+			"id":"79131874da24310c",
+			"type":"text",
+			"text":"GPU1 / Stage1: Loss_MB3 对 Logits_MB3求导得到 dLogits_MB3\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1605,
+			"y":10980,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"f534dbec587e4b91",
+			"type":"text",
+			"text":"GPU1 将发送 dH2_MB3 至 GPU0供 T7的MB2 Backward 使用",
+			"styleAttributes":{},
+			"x":-1605,
+			"y":11675,
+			"width":405,
+			"height":70,
+			"color":"4"
+		},
+		{
+			"id":"ced33c9f41e8fc83",
+			"type":"text",
+			"text":"GPU1 本地累积 MB3的参数梯度贡献",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1145,
+			"y":11675,
+			"width":405,
+			"height":70,
+			"color":"#ff00c8"
+		},
+		{
+			"id":"5314399be4bddc8d",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH2_MB3 经过 TransformerBlock2 Backward得到 dH1_MB3并计算 Block2 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2258,
+			"y":12720,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"b6bdc76502dc8e81",
+			"type":"text",
+			"text":"GPU0 / Stage0: H1_MB3 经过 TransformerBlock1 Backward得到 dH0_MB3并计算 Block1 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2258,
+			"y":12860,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"6c3c974b8eec5918",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH0_MB3 经过 EmbeddingBackward计算 Embedding 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2258,
+			"y":13020,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"f223aff3c3ef8dc3",
+			"type":"text",
+			"text":"GPU0 保存本地累积 MB3的参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2258,
+			"y":13200,
+			"width":405,
+			"height":70,
+			"color":"5"
+		},
+		{
+			"id":"36f59ba6992b46f2",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T4 计算并保留的Loss_MB2及其对应的计算图",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-645,
+			"y":12560,
+			"width":405,
+			"height":70,
+			"color":"6"
+		},
+		{
+			"id":"8f0b2e0bddc3072c",
+			"type":"text",
+			"text":"GPU1 / Stage1: Loss_MB2 对 Logits_MB2求导得到 dLogits_MB2\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-645,
+			"y":12720,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"4c3ca03700910335",
+			"type":"text",
+			"text":"GPU1 / Stage1: dLogits_MB2 经过 LM Head Backward得到 dNorm_MB2，并计算 LM Head 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-645,
+			"y":12835,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"66a8db6c8aa2ed2e",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T4 保存的 MB2 Forward 激活及 GPU1 本地模型参数",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-205,
+			"y":12560,
+			"width":405,
+			"height":70,
+			"color":"6"
+		},
+		{
+			"id":"11e9cf12d302ef55",
+			"type":"text",
+			"text":"GPU1 / Stage1：dNorm_MB2 经过 FinalNorm Backward得到 dH4_MB2，并计算 FinalNorm参数梯度贡献",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-645,
+			"y":12955,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"565e7135d25d8937",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH4_MB2 经过 Transformer Block4 Backward得到 dH3_MB2，并计算 Block4 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-645,
+			"y":13075,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"7d1ab29a45aa27c4",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH3_MB3 经过 Transformer Block3 Backward得到 dH2_MB3，并计算 Block3 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-645,
+			"y":13205,
+			"width":405,
+			"height":100
+		},
+		{
+			"id":"64d22c59a3aeabad",
+			"type":"text",
+			"text":"GPU1 将 dH2_MB2 发送至GPU0供 T8 的 MB2 Backward 使用",
+			"styleAttributes":{},
+			"x":-645,
+			"y":13395,
+			"width":405,
+			"height":70,
+			"color":"3"
+		},
+		{
+			"id":"703e0b46b588423f",
+			"type":"text",
+			"text":"Time Step 06",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-5125,
+			"y":12410,
+			"width":250,
+			"height":1165
+		},
+		{
+			"id":"11feac7cb6b015d2",
+			"type":"text",
+			"text":"GPU0 / Stage0: 使用 T4 保存的 MB3 Forward激活以及 GPU0 本地模型参数\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2695,
+			"y":12560,
+			"width":405,
+			"height":70,
+			"color":"5"
+		},
+		{
+			"id":"a491dde1ab93fb01",
+			"type":"text",
+			"text":"GPU0 / Stage0: 接收 T6 中 GPU1 发送的dH2_MB3\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2258,
+			"y":12560,
+			"width":405,
+			"height":70,
+			"color":"4"
+		},
+		{
+			"id":"7c68d198b62fd6c8",
+			"type":"text",
+			"text":"1. GPU1 本地累积 MB2的参数梯度贡献 \n2. 加到T6 已累积的 MB3 梯度上",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2,
+			"y":13395,
+			"width":405,
+			"height":70,
+			"color":"#ff00c8"
+		},
+		{
+			"id":"651ae32d8f542287",
+			"type":"text",
+			"text":"GPU1 / Stage1: dLogits_MB3 经过 LM Head Backward得到 dNorm_MB3，并计算 LM Head 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1605,
+			"y":11095,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"0d53d73ebb683984",
+			"type":"text",
+			"text":"GPU1 / Stage1：dNorm_MB3 经过 FinalNorm Backward得到 dH4_MB3，并计算 FinalNorm参数梯度贡献",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1605,
+			"y":11215,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"41d800571b8664d1",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH4_MB3 经过 Transformer Block4 Backward得到 dH3_MB3，并计算 Block4 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1605,
+			"y":11335,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"123787a1b95e71e9",
+			"type":"text",
+			"text":"GPU1 / Stage1: dH3_MB3 经过 Transformer Block3 Backward得到 dH2_MB3，并计算 Block3 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1605,
+			"y":11465,
+			"width":405,
+			"height":100
+		},
+		{
+			"id":"16039afede5da644",
+			"type":"text",
+			"text":"Time Step 06",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-4045,
+			"y":10605,
+			"width":250,
+			"height":1160
+		},
+		{
+			"id":"e20f330663776cb9",
+			"type":"text",
+			"text":"GPU0 / Stage0空闲",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2662,
+			"y":10715,
+			"width":250,
+			"height":850
+		},
+		{
+			"id":"17c5c135c5d450bc",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T5 计算并保留的Loss_MB3及其对应的计算图",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1725,
+			"y":10730,
+			"width":405,
+			"height":70,
+			"color":"1"
+		},
+		{
+			"id":"56917b3e78a4efa1",
+			"type":"text",
+			"text":"GPU1 / Stage1：使用 T5 保存的 MB3 Forward 激活及 GPU1 本地模型参数",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-1285,
+			"y":10730,
+			"width":405,
+			"height":70,
+			"color":"1"
+		},
+		{
+			"id":"5a032963e9bf9e25",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH1_MB0 经过 TransformerBlock1 Backward得到 dH0_MB0并计算 Block1 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3540,
+			"y":19432,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"117141caae85d692",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH0_MB0 经过 EmbeddingBackward计算 Embedding 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3540,
+			"y":19593,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"f78e2481857f12df",
+			"type":"text",
+			"text":"1. GPU0 保存本地累积 MB0的参数梯度贡献 \n2. 加到 T7、T8、T9 已累积的 MB3、MB2、MB1梯度上\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3540,
+			"y":19773,
+			"width":405,
+			"height":105
+		},
+		{
+			"id":"580b652472924514",
+			"type":"text",
+			"text":"GPU0 和 GPU1 均已完成MB0～MB3 的参数梯度累积",
+			"styleAttributes":{},
+			"x":-3540,
+			"y":20580,
+			"width":405,
+			"height":120
+		},
+		{
+			"id":"eee2ca3abab5c621",
+			"type":"text",
+			"text":"GPipe Fill-Drain 调度完成",
+			"styleAttributes":{},
+			"x":-3540,
+			"y":20780,
+			"width":405,
+			"height":80
+		},
+		{
+			"id":"4003fa65531087bb",
+			"type":"text",
+			"text":"进入阶段五：参数更新",
+			"styleAttributes":{},
+			"x":-3540,
+			"y":20960,
+			"width":405,
+			"height":80
+		},
+		{
+			"id":"734b84e9238370f2",
+			"type":"text",
+			"text":"GPU0 完成全部4个 MB 的BackwardStage0 参数梯度累积完成",
+			"styleAttributes":{},
+			"x":-3540,
+			"y":20420,
+			"width":405,
+			"height":80
+		},
+		{
+			"id":"1fa0171c4fa397aa",
+			"type":"text",
+			"text":"Time Step 06",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-5125,
+			"y":18990,
+			"width":250,
+			"height":1165
+		},
+		{
+			"id":"533b43855f66069f",
+			"type":"text",
+			"text":"GPU0 / Stage0: 接收 T9 中 GPU1 发送的dH2_MB0\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3540,
+			"y":19132,
+			"width":405,
+			"height":70
+		},
+		{
+			"id":"6996cc7fb4a34daf",
+			"type":"text",
+			"text":"GPU1 空闲Stage1 已在 T9 完成全部4个MB 的 Backward",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-2045,
+			"y":19185,
+			"width":405,
+			"height":240
+		},
+		{
+			"id":"a9880f8bc318e6cc",
+			"type":"text",
+			"text":"GPU0 / Stage0: dH2_MB0 经过 TransformerBlock2 Backward得到 dH1_MB0并计算 Block2 参数梯度贡献\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-3540,
+			"y":19292,
+			"width":405,
+			"height":90
+		},
+		{
+			"id":"01fc5d65e3922469",
+			"type":"text",
+			"text":"GPU0 / Stage0: 使用 T1 保存的 MB0 Forward激活以及 GPU0 本地模型参数\n",
+			"styleAttributes":{
+				"border":null,
+				"textAlign":"center"
+			},
+			"x":-4042,
+			"y":19132,
+			"width":405,
+			"height":70
+		},
+		{"id":"427604e099f3392e","type":"file","file":"mermaid-diagram (4).png","x":-5960,"y":22060,"width":346,"height":400}
 	],
 	"edges":[
-		{"id":"065aa563388a0f3f","fromNode":"67c6ad03b1c93030","fromSide":"bottom","toNode":"2ffd5911f54a5253","toSide":"top"},
-		{"id":"e8c915ae9b4d22a8","fromNode":"b965f2444021f2d2","fromSide":"bottom","toNode":"67c6ad03b1c93030","toSide":"top"},
-		{"id":"459f0e799aac4ab4","fromNode":"3de295ec887e4503","fromSide":"bottom","toNode":"b79a9ad1748b4a69","toSide":"top"},
-		{"id":"038f68ed5aba1604","fromNode":"b965f2444021f2d2","fromSide":"bottom","toNode":"3de295ec887e4503","toSide":"top"},
 		{"id":"d7809c8637ec8d0d","fromNode":"6f3ff97f726b34fc","fromSide":"bottom","toNode":"e5df9c8b537dfa80","toSide":"top"},
 		{"id":"41f99f2312910778","fromNode":"e5df9c8b537dfa80","fromSide":"bottom","toNode":"b29640455d1e3861","toSide":"top"},
-		{"id":"e34bd7f0febd08fd","fromNode":"ef791acb8093db07","fromSide":"bottom","toNode":"f616f49d4c2f3790","toSide":"top"},
-		{"id":"bbcfbd9c291dd94f","fromNode":"b965f2444021f2d2","fromSide":"bottom","toNode":"ef791acb8093db07","toSide":"top"},
-		{"id":"b5fbbb42c48fb632","fromNode":"8eb835c43f50f699","fromSide":"bottom","toNode":"eef80681a4e0909e","toSide":"top"},
-		{"id":"912d4dbcd589b9d5","fromNode":"b965f2444021f2d2","fromSide":"bottom","toNode":"8eb835c43f50f699","toSide":"top"},
-		{"id":"cf48e3917de4bfb1","fromNode":"eef80681a4e0909e","fromSide":"bottom","toNode":"aabf9e5781e7a711","toSide":"top"},
-		{"id":"216eb2b010987143","fromNode":"9c7008f2b9a0430f","fromSide":"bottom","toNode":"444162ab5a2922fc","toSide":"top"},
-		{"id":"6ec1682aef1db833","fromNode":"8b24fd1db4377683","fromSide":"bottom","toNode":"9c7008f2b9a0430f","toSide":"top"},
-		{"id":"8741202263fad344","fromNode":"98aa4941afeec64a","fromSide":"bottom","toNode":"9c7008f2b9a0430f","toSide":"top"},
-		{"id":"2ea500ffb00ee282","fromNode":"444162ab5a2922fc","fromSide":"bottom","toNode":"64e51802a471cc42","toSide":"top"},
-		{"id":"7944a57cb85440ad","fromNode":"aabf9e5781e7a711","fromSide":"bottom","toNode":"487a4a3509dcc75c","toSide":"top"},
-		{"id":"f876416eddddebb2","fromNode":"2ffd5911f54a5253","fromSide":"bottom","toNode":"aabf9e5781e7a711","toSide":"top"},
-		{"id":"f43945e00fd400c3","fromNode":"b79a9ad1748b4a69","fromSide":"bottom","toNode":"aabf9e5781e7a711","toSide":"top"},
-		{"id":"b85d6a6b7714e556","fromNode":"f616f49d4c2f3790","fromSide":"bottom","toNode":"aabf9e5781e7a711","toSide":"top"},
-		{"id":"1f94a81435e262ed","fromNode":"487a4a3509dcc75c","fromSide":"bottom","toNode":"0ff3bb236117b37c","toSide":"top"},
-		{"id":"e2422870548ab9fc","fromNode":"0ff3bb236117b37c","fromSide":"bottom","toNode":"92f6da9470c952d6","toSide":"top"},
-		{"id":"a3aa9159270f8455","fromNode":"92f6da9470c952d6","fromSide":"bottom","toNode":"ffb726d386f6642e","toSide":"top"},
-		{"id":"fdd17a3d5a954ceb","fromNode":"ffb726d386f6642e","fromSide":"bottom","toNode":"df84b5c7886cfba9","toSide":"top"},
-		{"id":"5a2f735682be8fe3","fromNode":"df84b5c7886cfba9","fromSide":"bottom","toNode":"f66b986759f89962","toSide":"top"},
-		{"id":"f7fbd9932b418234","fromNode":"f66b986759f89962","fromSide":"bottom","toNode":"8b24fd1db4377683","toSide":"top"},
-		{"id":"ee6960235eb69cd9","fromNode":"f66b986759f89962","fromSide":"bottom","toNode":"98aa4941afeec64a","toSide":"top"},
-		{"id":"b15a230487089994","fromNode":"64e51802a471cc42","fromSide":"bottom","toNode":"76daf005a4b49c46","toSide":"top"},
-		{"id":"729922a60e38c1ea","fromNode":"76daf005a4b49c46","fromSide":"bottom","toNode":"047a434f997019a9","toSide":"top"},
-		{"id":"b65c743985239433","fromNode":"047a434f997019a9","fromSide":"bottom","toNode":"a31924ddb8de4b4e","toSide":"top"},
 		{
 			"id":"5fee2105417f793c",
 			"styleAttributes":{},
@@ -753,15 +1748,6 @@
 			"toSide":"top"
 		},
 		{
-			"id":"91cb30caa81460d9",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"f622fb5633c56e2a",
-			"fromSide":"bottom",
-			"toNode":"0758ce8a198440e8",
-			"toSide":"top"
-		},
-		{
 			"id":"233102a082cd0331",
 			"styleAttributes":{},
 			"toFloating":false,
@@ -783,18 +1769,10 @@
 			"id":"54fc8df3f85cc9c7",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"413381cace98a03b",
 			"fromSide":"bottom",
 			"toNode":"2c6feedab4331794",
-			"toSide":"top"
-		},
-		{
-			"id":"7cd55497e49956a1",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"2c6feedab4331794",
-			"fromSide":"bottom",
-			"toNode":"91d3a2657eb593e1",
 			"toSide":"top"
 		},
 		{
@@ -823,17 +1801,6 @@
 			"fromSide":"bottom",
 			"toNode":"b166cf63fcec4091",
 			"toSide":"top"
-		},
-		{
-			"id":"7d2151daed4c9348",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromFloating":false,
-			"fromNode":"0758ce8a198440e8",
-			"fromSide":"bottom",
-			"toNode":"eb6a8bc592fa152c",
-			"toSide":"top",
-			"label":"Send H2_MB0"
 		},
 		{
 			"id":"f67b0710268db58b",
@@ -873,20 +1840,13 @@
 		},
 		{
 			"id":"2b2ced50649f7efa",
-			"styleAttributes":{},
+			"styleAttributes":{
+				"pathfindingMethod":null
+			},
 			"toFloating":false,
 			"fromNode":"86916fa18c472c5b",
 			"fromSide":"bottom",
 			"toNode":"dc99d0e8524e44d9",
-			"toSide":"top"
-		},
-		{
-			"id":"ae10f50e38103045",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"dc99d0e8524e44d9",
-			"fromSide":"bottom",
-			"toNode":"d9323d8312e59ddf",
 			"toSide":"top"
 		},
 		{
@@ -935,31 +1895,962 @@
 			"toSide":"top"
 		},
 		{
-			"id":"bdb323580efa4713",
+			"id":"4e0def6fcf817499",
 			"styleAttributes":{},
 			"toFloating":false,
-			"fromNode":"04fa8d5cadb3ab07",
+			"fromNode":"85e01a51a596512d",
 			"fromSide":"bottom",
-			"toNode":"e02ca58c56b68ed9",
+			"toNode":"8693584ab5276b5a",
 			"toSide":"top"
 		},
 		{
-			"id":"efa009e399e8b5de",
+			"id":"5585efaba41f67d4",
 			"styleAttributes":{},
 			"toFloating":false,
+			"fromNode":"8693584ab5276b5a",
+			"fromSide":"bottom",
+			"toNode":"daf316c4daf8b993",
+			"toSide":"top"
+		},
+		{
+			"id":"f7f8b7176abf9cf7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"daf316c4daf8b993",
+			"fromSide":"bottom",
+			"toNode":"b75b2e9753192819",
+			"toSide":"top"
+		},
+		{
+			"id":"8cdb5959e5dfe375",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b75b2e9753192819",
+			"fromSide":"bottom",
+			"toNode":"a1b8ca9656bf8a30",
+			"toSide":"top"
+		},
+		{
+			"id":"274cc8de7b67cb6c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a1b8ca9656bf8a30",
+			"fromSide":"bottom",
+			"toNode":"ddb7cc8e818b1b4b",
+			"toSide":"top"
+		},
+		{
+			"id":"7d157360969ce0cd",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6ec6497fc6f49ecb",
+			"fromSide":"right",
+			"toNode":"63f1d293c4157e2d",
+			"toSide":"left"
+		},
+		{
+			"id":"279c3f3e1e7b4a1d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"96c24d1b3820b1b8",
+			"fromSide":"bottom",
+			"toNode":"97b2523db6fd544a",
+			"toSide":"top"
+		},
+		{
+			"id":"7a6a462fea135328",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"97b2523db6fd544a",
+			"fromSide":"bottom",
+			"toNode":"d2d93b7f7b8b9fb9",
+			"toSide":"top"
+		},
+		{
+			"id":"03ad1104f43ef3e4",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7ee21e1418064123",
+			"fromSide":"bottom",
+			"toNode":"e7a78e0280fbd29b",
+			"toSide":"top"
+		},
+		{
+			"id":"6159c520f3a4083a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"d2d93b7f7b8b9fb9",
+			"fromSide":"bottom",
+			"toNode":"7bc76f97cefedc95",
+			"toSide":"top"
+		},
+		{
+			"id":"e3b44fc9c2e5b71b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7bc76f97cefedc95",
+			"fromSide":"bottom",
+			"toNode":"7ee21e1418064123",
+			"toSide":"top"
+		},
+		{
+			"id":"149ffb14dca89c20",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4eb90f8dbb67d3cf",
+			"fromSide":"bottom",
+			"toNode":"c0975e6048c6514a",
+			"toSide":"top"
+		},
+		{
+			"id":"99f2885091f54ae5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"0ed0515dc6c7e4b5",
+			"fromSide":"bottom",
+			"toNode":"4eb90f8dbb67d3cf",
+			"toSide":"top"
+		},
+		{
+			"id":"bb4c3c081e63685a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"c0975e6048c6514a",
+			"fromSide":"bottom",
+			"toNode":"9a88d95822773559",
+			"toSide":"top"
+		},
+		{
+			"id":"8dfcf1a4415cf724",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b29640455d1e3861",
+			"fromSide":"bottom",
+			"toNode":"7efd42e2c72a27e9",
+			"toSide":"top"
+		},
+		{
+			"id":"c06addaded4efafb",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"bdf98c1c52fe9673",
+			"fromSide":"bottom",
+			"toNode":"19c522410df15ac1",
+			"toSide":"top"
+		},
+		{
+			"id":"afa6e72704f04f59",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"c9e33ff971f303a3",
+			"fromSide":"bottom",
+			"toNode":"bdf98c1c52fe9673",
+			"toSide":"top"
+		},
+		{
+			"id":"c3187940ccc10283",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"651ae32d8f542287",
+			"fromSide":"bottom",
+			"toNode":"0d53d73ebb683984",
+			"toSide":"top"
+		},
+		{
+			"id":"e7cc650230a3a2eb",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"79131874da24310c",
+			"fromSide":"bottom",
+			"toNode":"651ae32d8f542287",
+			"toSide":"top"
+		},
+		{
+			"id":"7f5f94bb07b9bd77",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"0d53d73ebb683984",
+			"fromSide":"bottom",
+			"toNode":"41d800571b8664d1",
+			"toSide":"top"
+		},
+		{
+			"id":"d75da7cf50634577",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"41d800571b8664d1",
+			"fromSide":"bottom",
+			"toNode":"123787a1b95e71e9",
+			"toSide":"top"
+		},
+		{
+			"id":"728711dcd7d2b0a4",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"123787a1b95e71e9",
+			"fromSide":"bottom",
+			"toNode":"ced33c9f41e8fc83",
+			"toSide":"top"
+		},
+		{
+			"id":"4a4a0c93484f51f9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"17c5c135c5d450bc",
+			"fromSide":"bottom",
+			"toNode":"79131874da24310c",
+			"toSide":"top"
+		},
+		{
+			"id":"5c95eea21c91eed9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"4c3ca03700910335",
+			"fromSide":"bottom",
+			"toNode":"11e9cf12d302ef55",
+			"toSide":"top"
+		},
+		{
+			"id":"00cf9c4a4e24c045",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8f0b2e0bddc3072c",
+			"fromSide":"bottom",
+			"toNode":"4c3ca03700910335",
+			"toSide":"top"
+		},
+		{
+			"id":"4e8c8f372e601c68",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"565e7135d25d8937",
+			"fromSide":"bottom",
+			"toNode":"7d1ab29a45aa27c4",
+			"toSide":"top"
+		},
+		{
+			"id":"ca4adae32d486734",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"11e9cf12d302ef55",
+			"fromSide":"bottom",
+			"toNode":"565e7135d25d8937",
+			"toSide":"top"
+		},
+		{
+			"id":"556c8504dc200ae8",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7d1ab29a45aa27c4",
+			"fromSide":"bottom",
+			"toNode":"7c68d198b62fd6c8",
+			"toSide":"top"
+		},
+		{
+			"id":"2b205f101861eba2",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7ee21e1418064123",
+			"fromSide":"bottom",
+			"toNode":"bbc4474cc8a33133",
+			"toSide":"top"
+		},
+		{
+			"id":"5193926411462114",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"e7a78e0280fbd29b",
+			"fromSide":"bottom",
+			"toNode":"17c5c135c5d450bc",
+			"toSide":"top",
+			"color":"1"
+		},
+		{
+			"id":"1a9742b45bf5a6bb",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"bbc4474cc8a33133",
+			"fromSide":"bottom",
+			"toNode":"56917b3e78a4efa1",
+			"toSide":"top",
+			"color":"1"
+		},
+		{
+			"id":"1f4c30bc99d8a34d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"56917b3e78a4efa1",
+			"fromSide":"bottom",
+			"toNode":"79131874da24310c",
+			"toSide":"top"
+		},
+		{
+			"id":"7d0374abba695170",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a1b8ca9656bf8a30",
+			"fromSide":"bottom",
+			"toNode":"81f17a967a71c63c",
+			"toSide":"top"
+		},
+		{
+			"id":"f239f61db0c2963f",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"5314399be4bddc8d",
+			"fromSide":"bottom",
+			"toNode":"b6bdc76502dc8e81",
+			"toSide":"top"
+		},
+		{
+			"id":"9508c278f20f9e01",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b6bdc76502dc8e81",
+			"fromSide":"bottom",
+			"toNode":"f223aff3c3ef8dc3",
+			"toSide":"top"
+		},
+		{
+			"id":"1d6c541dba026ec9",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"f534dbec587e4b91",
+			"fromSide":"bottom",
+			"toNode":"a491dde1ab93fb01",
+			"toSide":"top",
+			"color":"5"
+		},
+		{
+			"id":"398e99baf2e16bd1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"123787a1b95e71e9",
+			"fromSide":"bottom",
+			"toNode":"f534dbec587e4b91",
+			"toSide":"top"
+		},
+		{
+			"id":"8af8405e057dbd02",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a491dde1ab93fb01",
+			"fromSide":"bottom",
+			"toNode":"5314399be4bddc8d",
+			"toSide":"top"
+		},
+		{
+			"id":"698762e978da122e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"36f59ba6992b46f2",
+			"fromSide":"bottom",
+			"toNode":"8f0b2e0bddc3072c",
+			"toSide":"top"
+		},
+		{
+			"id":"2866818c706bf012",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"66a8db6c8aa2ed2e",
+			"fromSide":"bottom",
+			"toNode":"8f0b2e0bddc3072c",
+			"toSide":"top"
+		},
+		{
+			"id":"e35bf0a93c412454",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7d1ab29a45aa27c4",
+			"fromSide":"bottom",
+			"toNode":"64d22c59a3aeabad",
+			"toSide":"top"
+		},
+		{
+			"id":"56f3d8b969839899",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"9097e96ae2afd70a",
+			"fromSide":"bottom",
+			"toNode":"a23b77547fcab28e",
+			"toSide":"top"
+		},
+		{
+			"id":"2cfb7c67bbf97500",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8d152cf3e4cd2f0b",
+			"fromSide":"bottom",
+			"toNode":"a23b77547fcab28e",
+			"toSide":"top"
+		},
+		{
+			"id":"d339def657a8ef7b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a23b77547fcab28e",
+			"fromSide":"bottom",
+			"toNode":"64bd20ce278ce129",
+			"toSide":"top"
+		},
+		{
+			"id":"ec47c9349fda8614",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"6ab7bdd774fd23cf",
+			"fromSide":"bottom",
+			"toNode":"e89a8f322bfc8cf1",
+			"toSide":"top"
+		},
+		{
+			"id":"c69c1c9791a862b1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"64bd20ce278ce129",
+			"fromSide":"bottom",
+			"toNode":"6ab7bdd774fd23cf",
+			"toSide":"top"
+		},
+		{
+			"id":"eb58af3bb70dfb0e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"e89a8f322bfc8cf1",
+			"fromSide":"bottom",
+			"toNode":"b08ee2f21131684d",
+			"toSide":"top"
+		},
+		{
+			"id":"91ca7d6ad69a87e1",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b08ee2f21131684d",
+			"fromSide":"bottom",
+			"toNode":"57ce0535668a719f",
+			"toSide":"top"
+		},
+		{
+			"id":"a95b02bcec6e7643",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b08ee2f21131684d",
+			"fromSide":"bottom",
+			"toNode":"31bb3c46808030df",
+			"toSide":"top"
+		},
+		{
+			"id":"7c3fe3071f80e0c9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"7f99b4a90f9c7472",
+			"fromSide":"bottom",
+			"toNode":"175566408975a430",
+			"toSide":"top"
+		},
+		{
+			"id":"901ddcf9a100b476",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"eabbd10014293c23",
+			"fromSide":"bottom",
+			"toNode":"7f99b4a90f9c7472",
+			"toSide":"top"
+		},
+		{
+			"id":"7480ef45248e961d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"874039c5ab7f96a0",
+			"fromSide":"bottom",
+			"toNode":"eabbd10014293c23",
+			"toSide":"top"
+		},
+		{
+			"id":"3b3816edac538ef0",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
 			"fromNode":"6a7ba2a3d8d80a9c",
+			"fromSide":"left",
+			"toNode":"9097e96ae2afd70a",
+			"toSide":"top",
+			"color":"3"
+		},
+		{
+			"id":"7ea0c00a4e2bba5b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"11f00d9071d4af57",
+			"fromSide":"bottom",
+			"toNode":"f437eb6b837c0ba3",
+			"toSide":"top"
+		},
+		{
+			"id":"7f4704a216e524da",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"fe0004d669aca952",
+			"fromSide":"bottom",
+			"toNode":"11f00d9071d4af57",
+			"toSide":"top"
+		},
+		{
+			"id":"6773ef9ab5bed0d7",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"f437eb6b837c0ba3",
+			"fromSide":"bottom",
+			"toNode":"7da6b1bc04d30a64",
+			"toSide":"top"
+		},
+		{
+			"id":"4214cff8eebb7864",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"7da6b1bc04d30a64",
+			"fromSide":"bottom",
+			"toNode":"8dc10a5b5bc3560d",
+			"toSide":"top"
+		},
+		{
+			"id":"d3f657e054dbc9aa",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8dc10a5b5bc3560d",
+			"fromSide":"bottom",
+			"toNode":"ce775bf9e29033a3",
+			"toSide":"top"
+		},
+		{
+			"id":"6081125eb917e920",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"8dc10a5b5bc3560d",
+			"fromSide":"bottom",
+			"toNode":"0793a99d42d0f809",
+			"toSide":"top"
+		},
+		{
+			"id":"6fe070066351374e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"3d589bc9de0a5922",
+			"fromSide":"bottom",
+			"toNode":"fe0004d669aca952",
+			"toSide":"top"
+		},
+		{
+			"id":"cd1c58a6b10d17b0",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"25de7b19d0771e53",
+			"fromSide":"bottom",
+			"toNode":"fe0004d669aca952",
+			"toSide":"top"
+		},
+		{
+			"id":"80788a668c1f2852",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"5f380e3885be677c",
+			"fromSide":"bottom",
+			"toNode":"858cf6392985c6e0",
+			"toSide":"top"
+		},
+		{
+			"id":"92ca960dad0cf05b",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"3a604202e4c3302e",
+			"fromSide":"bottom",
+			"toNode":"5f380e3885be677c",
+			"toSide":"top"
+		},
+		{
+			"id":"b6b1ca03f276879c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"858cf6392985c6e0",
+			"fromSide":"bottom",
+			"toNode":"f11ee49b6b6fbad0",
+			"toSide":"top"
+		},
+		{
+			"id":"5f80819820c91200",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"a9880f8bc318e6cc",
+			"fromSide":"bottom",
+			"toNode":"5a032963e9bf9e25",
+			"toSide":"top"
+		},
+		{
+			"id":"be2f1bd31fcc8f5d",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"533b43855f66069f",
+			"fromSide":"bottom",
+			"toNode":"a9880f8bc318e6cc",
+			"toSide":"top"
+		},
+		{
+			"id":"2cf43eefd5fa4eca",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"5a032963e9bf9e25",
+			"fromSide":"bottom",
+			"toNode":"f78e2481857f12df",
+			"toSide":"top"
+		},
+		{
+			"id":"3e98e1db5df2ac74",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"734b84e9238370f2",
+			"fromSide":"bottom",
+			"toNode":"580b652472924514",
+			"toSide":"top"
+		},
+		{
+			"id":"bfc9c2f93402a3d5",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"580b652472924514",
+			"fromSide":"bottom",
+			"toNode":"eee2ca3abab5c621",
+			"toSide":"top"
+		},
+		{
+			"id":"6e7d97ec79e46c30",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"eee2ca3abab5c621",
+			"fromSide":"bottom",
+			"toNode":"4003fa65531087bb",
+			"toSide":"top"
+		},
+		{
+			"id":"26cfab9ab9fc7a7a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"86916fa18c472c5b",
+			"fromSide":"bottom",
+			"toNode":"d9323d8312e59ddf",
+			"toSide":"top"
+		},
+		{
+			"id":"338385ff6c180705",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"413381cace98a03b",
+			"fromSide":"bottom",
+			"toNode":"91d3a2657eb593e1",
+			"toSide":"top"
+		},
+		{
+			"id":"e1a1b0b555d6ef1c",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"b166cf63fcec4091",
+			"fromSide":"bottom",
+			"toNode":"cc8b4655ec7ecdff",
+			"toSide":"top"
+		},
+		{
+			"id":"f97db91dd795db77",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"ba4143512be2c644",
+			"fromSide":"bottom",
+			"toNode":"0758ce8a198440e8",
+			"toSide":"top"
+		},
+		{
+			"id":"80b1c338b0e03609",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"49a3df5d40a60e9e",
 			"fromSide":"bottom",
 			"toNode":"fa8e893a07273b72",
 			"toSide":"top"
 		},
 		{
-			"id":"a984d64b27d0d745",
+			"id":"80dbd496c94d9a9c",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"f622fb5633c56e2a",
+			"fromSide":"right",
+			"toNode":"eb6a8bc592fa152c",
+			"toSide":"top",
+			"label":"Send H2_MB0"
+		},
+		{
+			"id":"066785d6a37602ee",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"2c6feedab4331794",
+			"fromSide":"right",
+			"toNode":"b97e5cdaea025c38",
+			"toSide":"top",
+			"label":"Send H2_MB1"
+		},
+		{
+			"id":"a643c9015ab1f3f3",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"dc99d0e8524e44d9",
+			"fromSide":"right",
+			"toNode":"85e01a51a596512d",
+			"toSide":"top",
+			"label":"Send H2_MB2"
+		},
+		{
+			"id":"cf077776b6468320",
 			"styleAttributes":{},
 			"toFloating":false,
-			"fromNode":"965f6fa3df273edc",
+			"fromNode":"c0975e6048c6514a",
 			"fromSide":"bottom",
-			"toNode":"cc8b4655ec7ecdff",
+			"toNode":"fd23b12d766c619e",
 			"toSide":"top"
+		},
+		{
+			"id":"b0580ec4d7872412",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"9a88d95822773559",
+			"fromSide":"right",
+			"toNode":"96c24d1b3820b1b8",
+			"toSide":"top",
+			"label":"Send H2_MB3"
+		},
+		{
+			"id":"48d55cd7045b204d",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"81f17a967a71c63c",
+			"fromSide":"right",
+			"toNode":"66a8db6c8aa2ed2e",
+			"toSide":"right",
+			"color":"6"
+		},
+		{
+			"id":"3db41b70e4d17484",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"ddb7cc8e818b1b4b",
+			"fromSide":"left",
+			"toNode":"36f59ba6992b46f2",
+			"toSide":"left",
+			"color":"6"
+		},
+		{
+			"id":"aa9896965f09f93d",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"fa8e893a07273b72",
+			"fromSide":"right",
+			"toNode":"8d152cf3e4cd2f0b",
+			"toSide":"right",
+			"color":"3"
+		},
+		{
+			"id":"a0c994f1c9f8e46f",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"fd23b12d766c619e",
+			"fromSide":"left",
+			"toNode":"11feac7cb6b015d2",
+			"toSide":"left",
+			"color":"5"
+		},
+		{
+			"id":"cb468faded370dce",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"7c68d198b62fd6c8",
+			"fromSide":"right",
+			"toNode":"ced33c9f41e8fc83",
+			"toSide":"right",
+			"color":"#ff00c8"
+		},
+		{
+			"id":"50ff60753ccdf0ed",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"64d22c59a3aeabad",
+			"fromSide":"bottom",
+			"toNode":"874039c5ab7f96a0",
+			"toSide":"top",
+			"color":"3"
+		},
+		{
+			"id":"38e26d6faf1b80f7",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"d9323d8312e59ddf",
+			"fromSide":"left",
+			"toNode":"daa1f0795e944fbd",
+			"toSide":"left",
+			"color":"1"
+		},
+		{
+			"id":"50650a7188cd1e8c",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"31bb3c46808030df",
+			"fromSide":"bottom",
+			"toNode":"3a604202e4c3302e",
+			"toSide":"top",
+			"color":"1"
+		},
+		{
+			"id":"05e5e7264a3b6abd",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"91d3a2657eb593e1",
+			"fromSide":"left",
+			"toNode":"65c577c4f2f303d1",
+			"toSide":"left",
+			"color":"4"
+		},
+		{
+			"id":"c1233884a8e2753f",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"f11ee49b6b6fbad0",
+			"fromSide":"right",
+			"toNode":"175566408975a430",
+			"toSide":"left"
+		},
+		{
+			"id":"d1b3b7b09b4961e0",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"f11ee49b6b6fbad0",
+			"fromSide":"left",
+			"toNode":"f223aff3c3ef8dc3",
+			"toSide":"left"
+		},
+		{
+			"id":"b8bfa69977d66dc6",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"175566408975a430",
+			"fromSide":"right",
+			"toNode":"f223aff3c3ef8dc3",
+			"toSide":"right",
+			"color":"5"
+		},
+		{
+			"id":"ed2624a286085cae",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"965f6fa3df273edc",
+			"fromSide":"left",
+			"toNode":"3d589bc9de0a5922",
+			"toSide":"left"
+		},
+		{
+			"id":"a2abb51c71f20984",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"cc8b4655ec7ecdff",
+			"fromSide":"right",
+			"toNode":"25de7b19d0771e53",
+			"toSide":"right"
+		},
+		{
+			"id":"98a206c451deb732",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"0758ce8a198440e8",
+			"fromSide":"left",
+			"toNode":"01fc5d65e3922469",
+			"toSide":"left"
+		},
+		{
+			"id":"f8e11dd019f93746",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"f78e2481857f12df",
+			"fromSide":"bottom",
+			"toNode":"734b84e9238370f2",
+			"toSide":"top"
+		},
+		{
+			"id":"daa619cbcb5367a0",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"0793a99d42d0f809",
+			"fromSide":"bottom",
+			"toNode":"533b43855f66069f",
+			"toSide":"top"
+		},
+		{
+			"id":"6152bc99b70f32c9",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromFloating":false,
+			"fromNode":"f78e2481857f12df",
+			"fromSide":"left",
+			"toNode":"f11ee49b6b6fbad0",
+			"toSide":"left"
+		},
+		{
+			"id":"6eb5347df0faf678",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"f78e2481857f12df",
+			"fromSide":"left",
+			"toNode":"f223aff3c3ef8dc3",
+			"toSide":"left"
+		},
+		{
+			"id":"e3407d41929aa924",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"f78e2481857f12df",
+			"fromSide":"right",
+			"toNode":"f11ee49b6b6fbad0",
+			"toSide":"bottom"
+		},
+		{
+			"id":"c5d813f0a9a42f08",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"f78e2481857f12df",
+			"fromSide":"bottom",
+			"toNode":"175566408975a430",
+			"toSide":"bottom"
+		},
+		{
+			"id":"455896c1d8f5f7db",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"toFloating":false,
+			"fromNode":"f11ee49b6b6fbad0",
+			"fromSide":"bottom",
+			"toNode":"f223aff3c3ef8dc3",
+			"toSide":"bottom"
 		}
 	],
 	"metadata":{
