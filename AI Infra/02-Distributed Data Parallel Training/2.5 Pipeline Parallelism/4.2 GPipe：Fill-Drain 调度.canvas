@@ -1715,7 +1715,7 @@
 			"width":405,
 			"height":70
 		},
-		{"id":"427604e099f3392e","type":"file","file":"mermaid-diagram (4).png","x":-5960,"y":22060,"width":346,"height":400}
+		{"id":"427604e099f3392e","type":"file","file":"AI Infra/02-Distributed Data Parallel Training/2.5 Pipeline Parallelism/T1～T5 的 mindmap 简化图（Forward）.png","x":-5960,"y":22060,"width":346,"height":400}
 	],
 	"edges":[
 		{"id":"d7809c8637ec8d0d","fromNode":"6f3ff97f726b34fc","fromSide":"bottom","toNode":"e5df9c8b537dfa80","toSide":"top"},
